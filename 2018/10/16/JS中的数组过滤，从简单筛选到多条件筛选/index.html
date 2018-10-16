@@ -81,13 +81,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Anne">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="在上家公司工作的时候，有一个需求是在前端部分完成筛选功能，一次拿到所有数据，然后根据条件筛选。通常情况下筛选是后台给接口，在数据量不大的情况下，也有人可能会遇到前端筛选这样的情况，特别写了这篇文章分享给大家，有问题请指出，互相学习。 一般情况下的单条件筛选，数组的filter方法就能够满足需求，本文讨论的重点是多条件下的复合筛选，并列出了几个相关知识点。 以下是很多个🌰🌰🌰🌰 123456">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS中的数组过滤，从简单筛选到多条件筛选">
+<meta property="og:url" content="http://yoursite.com/2018/10/16/JS中的数组过滤，从简单筛选到多条件筛选/index.html">
 <meta property="og:site_name" content="Anne">
+<meta property="og:description" content="在上家公司工作的时候，有一个需求是在前端部分完成筛选功能，一次拿到所有数据，然后根据条件筛选。通常情况下筛选是后台给接口，在数据量不大的情况下，也有人可能会遇到前端筛选这样的情况，特别写了这篇文章分享给大家，有问题请指出，互相学习。 一般情况下的单条件筛选，数组的filter方法就能够满足需求，本文讨论的重点是多条件下的复合筛选，并列出了几个相关知识点。 以下是很多个🌰🌰🌰🌰 123456">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-16T07:17:55.239Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Anne">
+<meta name="twitter:title" content="JS中的数组过滤，从简单筛选到多条件筛选">
+<meta name="twitter:description" content="在上家公司工作的时候，有一个需求是在前端部分完成筛选功能，一次拿到所有数据，然后根据条件筛选。通常情况下筛选是后台给接口，在数据量不大的情况下，也有人可能会遇到前端筛选这样的情况，特别写了这篇文章分享给大家，有问题请指出，互相学习。 一般情况下的单条件筛选，数组的filter方法就能够满足需求，本文讨论的重点是多条件下的复合筛选，并列出了几个相关知识点。 以下是很多个🌰🌰🌰🌰 123456">
 
 
 
@@ -117,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/16/JS中的数组过滤，从简单筛选到多条件筛选/"/>
 
 
 
 
 
-  <title>Anne</title>
+  <title>JS中的数组过滤，从简单筛选到多条件筛选 | Anne</title>
   
 
 
@@ -142,8 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,9 +219,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -248,9 +251,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/16/JS中的数组过滤，从简单筛选到多条件筛选/" itemprop="url">JS中的数组过滤，从简单筛选到多条件筛选</a></h1>
+          <h1 class="post-title" itemprop="name headline">JS中的数组过滤，从简单筛选到多条件筛选</h1>
         
 
         <div class="post-meta">
@@ -300,9 +301,7 @@
       
 
       
-        
-          
-            <p>在上家公司工作的时候，有一个需求是在前端部分完成筛选功能，一次拿到所有数据，然后根据条件筛选。通常情况下筛选是后台给接口，在数据量不大的情况下，也有人可能会遇到前端筛选这样的情况，特别写了这篇文章分享给大家，有问题请指出，互相学习。</p>
+        <p>在上家公司工作的时候，有一个需求是在前端部分完成筛选功能，一次拿到所有数据，然后根据条件筛选。通常情况下筛选是后台给接口，在数据量不大的情况下，也有人可能会遇到前端筛选这样的情况，特别写了这篇文章分享给大家，有问题请指出，互相学习。</p>
 <p>一般情况下的单条件筛选，数组的filter方法就能够满足需求，本文讨论的重点是多条件下的复合筛选，并列出了几个相关知识点。</p>
 <p>以下是很多个🌰🌰🌰🌰</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 这个是例子中的被筛选数组</span></span><br><span class="line"><span class="keyword">var</span> aim = [</span><br><span class="line">    &#123;<span class="attr">name</span>:<span class="string">'Anne'</span>, <span class="attr">age</span>: <span class="number">23</span>, <span class="attr">gender</span>:<span class="string">'female'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">name</span>:<span class="string">'Leila'</span>, <span class="attr">age</span>: <span class="number">16</span>, <span class="attr">gender</span>:<span class="string">'female'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">name</span>:<span class="string">'Jay'</span>, <span class="attr">age</span>: <span class="number">19</span>, <span class="attr">gender</span>:<span class="string">'male'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">name</span>:<span class="string">'Mark'</span>, <span class="attr">age</span>: <span class="number">40</span>, <span class="attr">gender</span>:<span class="string">'male'</span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
@@ -327,8 +326,6 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 我常用方法，如果项目很大，不推荐</span></span><br><span class="line"><span class="keyword">let</span> obj1 = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj))</span><br><span class="line"><span class="comment">// 看掘金小册前端面试指南看到的</span></span><br><span class="line"><span class="comment">// 这个加缓存的方法看到的时候很惊艳，我知道递归可以解决，但是没有想过加缓存优化</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> cache = &#123;&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">_fn</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (cache[n]) &#123;</span><br><span class="line">            <span class="keyword">return</span> cache[n];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">1</span> || n == <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> prev = _fn(n - <span class="number">1</span>);</span><br><span class="line">        cache[n - <span class="number">1</span>] = prev;</span><br><span class="line">        <span class="keyword">let</span> next = _fn(n - <span class="number">2</span>);</span><br><span class="line">        cache[n - <span class="number">2</span>] = next;</span><br><span class="line">        <span class="keyword">return</span> prev + next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> _fn(n);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 常规无缓存的方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">o1, o2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> k <span class="keyword">in</span> o2) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span> o2[k] === <span class="string">'object'</span>) &#123;</span><br><span class="line">            o1[k] = &#123;&#125;;</span><br><span class="line">            deepClone(o1[k], o2[k]);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            o1[k] = o2[k];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>完！</p>
 
-          
-        
       
     </div>
     
@@ -345,140 +342,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/16/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Anne">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Anne">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/16/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-16T11:54:39+08:00">
-                2018-10-16
-              </time>
+              <a href="/2018/10/16/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -488,10 +373,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -499,6 +385,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -519,8 +409,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -569,6 +468,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#单条件单数据筛选"><span class="nav-number">1.</span> <span class="nav-text">单条件单数据筛选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单条件多数据筛选"><span class="nav-number">2.</span> <span class="nav-text">单条件多数据筛选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多条件单数据筛选"><span class="nav-number">3.</span> <span class="nav-text">多条件单数据筛选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多条件多数据筛选"><span class="nav-number">4.</span> <span class="nav-text">多条件多数据筛选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#知识点1-Object-key-获取数组索引或者对象属性"><span class="nav-number">5.</span> <span class="nav-text">知识点1: Object.key() 获取数组索引或者对象属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#知识点2-js里的falsy"><span class="nav-number">6.</span> <span class="nav-text">知识点2: js里的falsy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#知识点3-Array-every-与-Array-some的区别"><span class="nav-number">7.</span> <span class="nav-text">知识点3: Array.every 与 Array.some的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#知识点4-数组的深拷贝与浅拷贝"><span class="nav-number">8.</span> <span class="nav-text">知识点4: 数组的深拷贝与浅拷贝</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -709,6 +624,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
