@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="Vue-SSR: head Mixin 实现头部信息管理 上周发了我第一篇技术博客，传送门1：JS中的数组过滤，从简单筛选到多条件筛选，感谢大家的支持，尤其是提出疑问，发现错误的同学，感谢你们。发完博客以后，我用hexo搭了一个github pages, 绑定了我之前买的域名，传送门2： http://blog.yidol.cn/，以后我的博客会在GitHub发一遍，然后掘金抄送一遍。 近两个月都">
+<meta name="description" content="上周发了我第一篇技术博客，传送门1：JS中的数组过滤，从简单筛选到多条件筛选，感谢大家的支持，尤其是提出疑问，发现错误的同学，感谢你们。发完博客以后，我用hexo搭了一个github pages, 绑定了我之前买的域名，传送门2： http://blog.yidol.cn/，以后我的博客会在GitHub发一遍，然后掘金抄送一遍。 近两个月都在忙着搭建vue-ssr的项目，因为公司产品是媒体类，S">
 <meta name="keywords" content="vue-ssr">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue-SSR: head Mixin 实现头部信息管理">
 <meta property="og:url" content="http://yoursite.com/2018/10/23/Vue-SSR-head-Mixin-实现头部信息管理/index.html">
 <meta property="og:site_name" content="Anne">
-<meta property="og:description" content="Vue-SSR: head Mixin 实现头部信息管理 上周发了我第一篇技术博客，传送门1：JS中的数组过滤，从简单筛选到多条件筛选，感谢大家的支持，尤其是提出疑问，发现错误的同学，感谢你们。发完博客以后，我用hexo搭了一个github pages, 绑定了我之前买的域名，传送门2： http://blog.yidol.cn/，以后我的博客会在GitHub发一遍，然后掘金抄送一遍。 近两个月都">
+<meta property="og:description" content="上周发了我第一篇技术博客，传送门1：JS中的数组过滤，从简单筛选到多条件筛选，感谢大家的支持，尤其是提出疑问，发现错误的同学，感谢你们。发完博客以后，我用hexo搭了一个github pages, 绑定了我之前买的域名，传送门2： http://blog.yidol.cn/，以后我的博客会在GitHub发一遍，然后掘金抄送一遍。 近两个月都在忙着搭建vue-ssr的项目，因为公司产品是媒体类，S">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-23T10:39:41.361Z">
+<meta property="og:updated_time" content="2018-10-23T10:41:39.310Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue-SSR: head Mixin 实现头部信息管理">
-<meta name="twitter:description" content="Vue-SSR: head Mixin 实现头部信息管理 上周发了我第一篇技术博客，传送门1：JS中的数组过滤，从简单筛选到多条件筛选，感谢大家的支持，尤其是提出疑问，发现错误的同学，感谢你们。发完博客以后，我用hexo搭了一个github pages, 绑定了我之前买的域名，传送门2： http://blog.yidol.cn/，以后我的博客会在GitHub发一遍，然后掘金抄送一遍。 近两个月都">
+<meta name="twitter:description" content="上周发了我第一篇技术博客，传送门1：JS中的数组过滤，从简单筛选到多条件筛选，感谢大家的支持，尤其是提出疑问，发现错误的同学，感谢你们。发完博客以后，我用hexo搭了一个github pages, 绑定了我之前买的域名，传送门2： http://blog.yidol.cn/，以后我的博客会在GitHub发一遍，然后掘金抄送一遍。 近两个月都在忙着搭建vue-ssr的项目，因为公司产品是媒体类，S">
 
 
 
@@ -339,7 +339,7 @@
       
 
       
-        <h1 id="Vue-SSR-head-Mixin-实现头部信息管理"><a href="#Vue-SSR-head-Mixin-实现头部信息管理" class="headerlink" title="Vue-SSR: head Mixin 实现头部信息管理"></a>Vue-SSR: head Mixin 实现头部信息管理</h1><blockquote>
+        <blockquote>
 <p>上周发了我第一篇技术博客，<strong>传送门1：<a href="https://juejin.im/post/5bc44a71e51d450e935caa11" target="_blank" rel="noopener">JS中的数组过滤，从简单筛选到多条件筛选</a></strong>，感谢大家的支持，尤其是提出疑问，发现错误的同学，感谢你们。发完博客以后，我用hexo搭了一个github pages, 绑定了我之前买的域名，<strong>传送门2： <a href="http://blog.yidol.cn/" target="_blank" rel="noopener">http://blog.yidol.cn/</a></strong>，以后我的博客会在GitHub发一遍，然后掘金抄送一遍。</p>
 <p>近两个月都在忙着搭建vue-ssr的项目，因为公司产品是媒体类，SEO很重要，第一周是尝试用nuxt搭建了一个项目，nuxt确实是开箱即用，比较爽，就是配置的时候可能要看看nuxt的文档，还要看看webpack的文档，很多人使用vue-cli3产生了同样的感受。由于公司给的时间也够，我决定参考尤雨溪的官方例子🌰 <a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank" rel="noopener">vue-hacknews-2.0</a> 搭建了我司的新PC端项目，整个项目是用webpack4+vue2+vue-ssr从0到1，踩过一些坑，多谢网上各个平台的同学们贡献的文章，我打算陆续写文章分享项目搭建的过程，希望也能够帮助到大家。</p>
 </blockquote>
@@ -552,7 +552,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue-SSR-head-Mixin-实现头部信息管理"><span class="nav-number">1.</span> <span class="nav-text">Vue-SSR: head Mixin 实现头部信息管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#尤大大的title-mixin"><span class="nav-number">1.1.</span> <span class="nav-text">尤大大的title mixin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Head-Mixin的改造过程"><span class="nav-number">1.2.</span> <span class="nav-text">Head Mixin的改造过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组件里用法"><span class="nav-number">1.2.1.</span> <span class="nav-text">组件里用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认的头信息"><span class="nav-number">1.2.2.</span> <span class="nav-text">默认的头信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引入全局head-mixin"><span class="nav-number">1.2.3.</span> <span class="nav-text">引入全局head mixin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义head-Mixin"><span class="nav-number">1.2.4.</span> <span class="nav-text">定义head Mixin</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点一：混入-mixins"><span class="nav-number">1.3.</span> <span class="nav-text">知识点一：混入 (mixins)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点二：服务器端渲染与客户端渲染的生命周期不同"><span class="nav-number">1.4.</span> <span class="nav-text">知识点二：服务器端渲染与客户端渲染的生命周期不同</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#尤大大的title-mixin"><span class="nav-number">1.</span> <span class="nav-text">尤大大的title mixin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Head-Mixin的改造过程"><span class="nav-number">2.</span> <span class="nav-text">Head Mixin的改造过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组件里用法"><span class="nav-number">2.1.</span> <span class="nav-text">组件里用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认的头信息"><span class="nav-number">2.2.</span> <span class="nav-text">默认的头信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引入全局head-mixin"><span class="nav-number">2.3.</span> <span class="nav-text">引入全局head mixin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义head-Mixin"><span class="nav-number">2.4.</span> <span class="nav-text">定义head Mixin</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点一：混入-mixins"><span class="nav-number">3.</span> <span class="nav-text">知识点一：混入 (mixins)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点二：服务器端渲染与客户端渲染的生命周期不同"><span class="nav-number">4.</span> <span class="nav-text">知识点二：服务器端渲染与客户端渲染的生命周期不同</span></a></li></ol></div>
             
 
           </div>
