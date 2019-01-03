@@ -75,12 +75,10 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="vue-ssr," />
 
 
 
-
-  
 
 
   <link rel="alternate" href="/atom.xml" title="Anne" type="application/atom+xml" />
@@ -90,14 +88,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="Vue-SSR : 项目部署 抱歉这篇文章距离上篇很久，一方面是项目有点忙，一方面玩的也很用力。上次发了几个钓鱼的文章主题联想，我在朋友圈也发了一遍，很多人（假装有很多）想看vue ssr相关的东西，可能从零到一的东西太多了，也不需要我再重复发一遍。 ssr项目的部署也是困扰过我一段时间 非SSR项目部署 在做这个项目之前，前端的部署都是极为简单的，流程就是  npm run build 编译打包">
+<meta name="keywords" content="vue-ssr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VUS-SSR项目部署">
+<meta property="og:url" content="http://yoursite.com/2019/01/03/VUS-SSR项目部署/index.html">
 <meta property="og:site_name" content="Anne">
+<meta property="og:description" content="Vue-SSR : 项目部署 抱歉这篇文章距离上篇很久，一方面是项目有点忙，一方面玩的也很用力。上次发了几个钓鱼的文章主题联想，我在朋友圈也发了一遍，很多人（假装有很多）想看vue ssr相关的东西，可能从零到一的东西太多了，也不需要我再重复发一遍。 ssr项目的部署也是困扰过我一段时间 非SSR项目部署 在做这个项目之前，前端的部署都是极为简单的，流程就是  npm run build 编译打包">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-16T08:01:38.277Z">
+<meta property="og:updated_time" content="2019-01-03T11:18:20.887Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
+<meta name="twitter:title" content="VUS-SSR项目部署">
+<meta name="twitter:description" content="Vue-SSR : 项目部署 抱歉这篇文章距离上篇很久，一方面是项目有点忙，一方面玩的也很用力。上次发了几个钓鱼的文章主题联想，我在朋友圈也发了一遍，很多人（假装有很多）想看vue ssr相关的东西，可能从零到一的东西太多了，也不需要我再重复发一遍。 ssr项目的部署也是困扰过我一段时间 非SSR项目部署 在做这个项目之前，前端的部署都是极为简单的，流程就是  npm run build 编译打包">
 
 
 
@@ -127,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/01/03/VUS-SSR项目部署/"/>
 
 
 
 
 
-  <title>about | Anne</title>
+  <title>VUS-SSR项目部署 | Anne</title>
   
 
 
@@ -258,33 +260,168 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/03/VUS-SSR项目部署/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Anne">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Anne">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">about</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h1 class="post-title" itemprop="name headline">VUS-SSR项目部署</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-03T19:17:40+08:00">
+                2019-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>Vue-SSR : 项目部署</p>
+<p>抱歉这篇文章距离上篇很久，一方面是项目有点忙，一方面玩的也很用力。上次发了几个钓鱼的文章主题联想，我在朋友圈也发了一遍，很多人（假装有很多）想看vue ssr相关的东西，可能从零到一的东西太多了，也不需要我再重复发一遍。</p>
+<p>ssr项目的部署也是困扰过我一段时间</p>
+<p>非SSR项目部署</p>
+<p>在做这个项目之前，前端的部署都是极为简单的，流程就是</p>
+<ol>
+<li>npm run build 编译打包</li>
+<li>将打包出来的 dist 包单独放到一个库里，这里有好多个项目，push到放项目编译包的远程仓库</li>
+<li>登陆服务器，在服务器上把包 pull 下来</li>
+<li>如果代码托管了七牛，会登陆七牛刷新一下资源</li>
+</ol>
+<p>当然，这个步骤里面省略了 nginx 配置，默认认为你的 nginx 已经配好，域名解析也做好了。</p>
+<p>SSR项目部署</p>
+<p>在做之前也是网上搜了不少大神的文章，看了很多别人的项目代码，讲到部署的少之又少，我所能理解的就是 npm run build 然后 npm run start ,但是问题是我又不能把整个项目都放到服务器上，生产环境我只需要把打包后的文件放到服务器上，nginx还是要配的，假设你nginx配好了，注意nginx配置的端口要跟node的端口一致，不知道部署的时候，百思不得其解，想明白了其实就是部署一个node的项目，我以前也没有发布过node的项目，迷糊了一些时间。</p>
+<p>流程如下：</p>
+<ol>
+<li>npm run build 编译打包</li>
+<li>【睁大眼睛】👀 要将1⃣️打包出来的 dist/ 文件夹  2⃣️ package.json  3⃣️ server.js  4⃣️ public/文件夹 这四样东西拿出来，放到某个远程仓库</li>
+<li>登陆服务器，在服务器上把包 pull 下来</li>
+<li>在服务器上npm install，这一步需要</li>
+<li>【👀】服务器下载 pm2 进程管理工具，你可以用或者不用， pm2 start &lt; 项目名 &gt; –watch</li>
+</ol>
+<p>请您提出疑问</p>
+<p>我不知道如何描述的更清楚一些，如果你看到文章还是有疑问。不如在评论区留下你的疑问，我会根据您的提问来完善这个文章。</p>
+<p>完！</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue-ssr/" rel="tag"># vue-ssr</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/23/Vue-SSR-head-Mixin-实现头部信息管理/" rel="next" title="Vue-SSR: head Mixin 实现头部信息管理">
+                <i class="fa fa-chevron-left"></i> Vue-SSR: head Mixin 实现头部信息管理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -293,6 +430,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
